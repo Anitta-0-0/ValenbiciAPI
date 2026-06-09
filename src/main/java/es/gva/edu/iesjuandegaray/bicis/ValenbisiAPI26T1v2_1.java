@@ -61,9 +61,7 @@ public class ValenbisiAPI26T1v2_1 {
                     for (int i = 0; i < features.length(); i++) {
                         JSONObject feature = features.getJSONObject(i);
                         JSONObject atributos = feature.getJSONObject("attributes");
-
-                        // Extraemos los datos exactos que vienen en tu JSON
-                        // Usamos optString/optInt para evitar NullPointerException si la API falla en alguna estación
+                        
                         String adreça = atributos.optString("address", "Dirección no disponible");
                         int disponibles = atributos.optInt("available", 0);
                         int libres = atributos.optInt("free", 0);
@@ -73,6 +71,7 @@ public class ValenbisiAPI26T1v2_1 {
                         System.out.println("Bicis disponibles: " + disponibles);
                         System.out.println("Espacios libres: " + libres);
                         System.out.println("Total plazas: " + totales);
+                        System.out.println("--------------------------------------------------------------------------------------------------------");
                         System.out.println("--------------------------------------------------------------------------------------------------------");
                     }
                 }
